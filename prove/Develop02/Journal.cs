@@ -10,7 +10,9 @@ public class Journal
     {
         DateTime currentTime = DateTime.Now;
         string date = currentTime.ToShortDateString();
+        string time = currentTime.ToShortTimeString();
         newEntry._date = date;
+        newEntry._time = time;        
 
         PromptGenerator prompt = new PromptGenerator();
         string promptText = prompt.GetRandomPrompt();
@@ -37,7 +39,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}||{entry._promptText}||{entry._entryText}");
+                outputFile.WriteLine($"{entry._date}||{entry._promptText}||{entry._time}||{entry._entryText}");
             }
         }
     }
@@ -55,7 +57,8 @@ public class Journal
             Entry newEntry = new Entry();
             newEntry._date = parts[0];
             newEntry._promptText = parts[1];
-            newEntry._entryText = parts[2];
+            newEntry._time = parts[2];
+            newEntry._entryText = parts[3];
 
             entries.Add(newEntry);
         }
