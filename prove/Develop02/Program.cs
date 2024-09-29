@@ -7,12 +7,14 @@ class Program
         // Console.WriteLine("Hello Develop02 World!");
 
         Console.WriteLine("Welcome to the Journal Program!");
-        Console.WriteLine("Please select one of the following choices:");
+
+        Journal userJournal = new Journal();
 
         string userInput = "";
 
         do
         {
+            Console.WriteLine("Please select one of the following choices:");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
@@ -22,11 +24,10 @@ class Program
             Console.Write("What would you like to do? ");
             userInput = Console.ReadLine();
 
-            Journal userJournal = new Journal();
-
             if (userInput == "1")
             {
-                userJournal.AddEntry();
+                Entry entry = new Entry();
+                userJournal.AddEntry(entry);
             }
             else if (userInput == "2")
             {
@@ -34,11 +35,17 @@ class Program
             }
             else if (userInput == "3")
             {
-                userJournal.SaveToFile();
+                Console.WriteLine("What is the file name? ");
+                string fileName = Console.ReadLine();
+                
+                userJournal.LoadFromFile(fileName);
             }
             else if (userInput == "4")
             {
-                userJournal.LoadFromFile();
+                Console.WriteLine("What is the file name? ");
+                string fileName = Console.ReadLine();
+                
+                userJournal.SaveToFile(fileName);
             }
 
         } while (userInput != "5");
