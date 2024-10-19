@@ -21,6 +21,7 @@ class Program
             new Comments("MrCoolAttitude", "As a Nikon shooter I'm always envious of Sony's technology innovations."),
             ];
 
+        // Comments of video 3
         List<Comments> commentsVideo3 = [
             new Comments("itsaty7760", "Finally a rbg fridge, I hope next year Lg will design a rbg toaster that razer never delivered"),
             new Comments("Roadman1000", "Hopefully my appliance store chain gets one of these.  It would be a great center piece!"),
