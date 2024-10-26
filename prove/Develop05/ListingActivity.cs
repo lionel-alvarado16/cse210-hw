@@ -10,6 +10,12 @@ public class ListingActivity : Activity
     {
         SetName("Listing Activity");
         SetDescription("This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+
+        // Adding elements to the _prompts list
+        _prompts.Add("Who are people that you appreciate?");
+        _prompts.Add("What are personal strengths of yours?");
+        _prompts.Add("When have you felt the Holy Ghost this month?");
+        _prompts.Add("Who are some of your personal heroes?");
     }
 
     public void Run()
@@ -22,17 +28,12 @@ public class ListingActivity : Activity
 
     public void GetRandomPrompt()
     {
-        _prompts.Add("Who are people that you appreciate?");
-        _prompts.Add("What are personal strengths of yours?");
-        _prompts.Add("When have you felt the Holy Ghost this month?");
-        _prompts.Add("Who are some of your personal heroes?");
-
         Random rnd = new Random();
         int promptIndex = rnd.Next(_prompts.Count);
 
         Console.WriteLine("\nList as many responses you can to the following prompt:");
         Console.WriteLine($" --- {_prompts[promptIndex]} ---");
-        Console.Write("You may begin in ");
+        Console.Write("You may begin in: ");
         ShowCountDown(5);
         Console.WriteLine();
     }
