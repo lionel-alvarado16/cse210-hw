@@ -64,7 +64,7 @@ public class ReflectingActivity : Activity
 
     public void DisplayQuestions()
     {
-        Console.WriteLine("\nNow ponder on each of the following questions as they related to this experience.");
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience.");
         Console.Write("You may begin in: ");
         ShowCountDown(5);
         Console.Clear();
