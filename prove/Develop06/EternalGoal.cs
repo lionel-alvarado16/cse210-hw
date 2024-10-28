@@ -7,9 +7,11 @@ public class EternalGoal : Goal
         
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        
+        IsComplete();
+
+        return base.GetPoints();
     }
 
     public override bool IsComplete()
@@ -19,6 +21,10 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "";
+        string name = base.GetName();
+        string description = base.GetDescription();
+        int points = base.GetPoints();
+        
+        return $"{name},{description},{points}";
     }
 }

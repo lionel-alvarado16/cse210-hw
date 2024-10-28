@@ -6,6 +6,8 @@ class Program
     {
         // Console.WriteLine("Hello Develop06 World!");
 
-        
+        GoalManager goalManager = new GoalManager();
+
+        goalManager.Start();
     }
 }
