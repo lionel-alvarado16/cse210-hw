@@ -27,11 +27,6 @@ public abstract class Goal
     {
         return _points;
     }
-
-    public void SetPoints(int points)
-    {
-        _points = points;
-    }
     
     public abstract int RecordEvent();
 
